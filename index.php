@@ -9,9 +9,23 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
+  <script src='https://cdn.rawgit.com/jackmoore/zoom/master/jquery.zoom.min.js'></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style type="text/css">
+    ..preview{
+  color: blue;
+  font-size: 30px;
+}
   
-      <link rel="stylesheet" href="css/style.css">
+.img-responsive:hover{
+  cursor: pointer;
+  filter: brightness(130%);
+  transform: translate(-3px, -3px);
+  cursor: pointer;
+  box-shadow: 10px 5px 5px black;
+}
+
+  </style>
 
   
 </head>
@@ -72,15 +86,18 @@
                            <div class='events'>
                             <div class='day__img'>
                               <div class='col-md-12'>
-                                  <img class='img-responsive' src='".$row["img"]."' alt=''>
+                                  <a href='".$row["img"]."'><img class='img-responsive'  src='".$row["img"]."'  alt=''></a>
+
                                 <div class='col-md-3'>
-                                  <a > <img class='thumbnail img-responsive' src='".$row["img1"]."' alt=''> </a>
-                                  <img class='thumbnail img-responsive' src='".$row["img2"]."' alt=''>
-                                  <img class='thumbnail img-responsive' src='".$row["img3"]."' alt=''>
-                                  <img class='thumbnail img-responsive' src='".$row["img4"]."' alt=''>
-                                  <img class='thumbnail img-responsive' src='".$row["img5"]."' alt=''>
+                                  <a href='".$row["img1"]."'> <img class='thumbnail img-responsive' src='".$row["img1"]."' alt=''> </a>
+                                  <a href='".$row["img2"]."'> <img class='thumbnail img-responsive' src='".$row["img2"]."' alt=''> </a>
+                                  <a href='".$row["img3"]."'> <img class='thumbnail img-responsive' src='".$row["img3"]."' alt=''> </a>
+                                  <a href='".$row["img4"]."'> <img class='thumbnail img-responsive' src='".$row["img4"]."' alt=''> </a>
+                                  <a href='".$row["img5"]."'> <img class='thumbnail img-responsive' src='".$row["img5"]."' alt=''> </a>
+                                 
                                 </div>
                               <p class='caption'>".$row["Place"]."</p>
+
                             </div>
                             <div class='date'>".$row["Date"]."</div>
                             </div>

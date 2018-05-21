@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 18, 2018 lúc 05:45 AM
--- Phiên bản máy phục vụ: 10.1.25-MariaDB
--- Phiên bản PHP: 7.1.7
+-- Thời gian đã tạo: Th5 21, 2018 lúc 10:36 AM
+-- Phiên bản máy phục vụ: 10.1.32-MariaDB
+-- Phiên bản PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,8 +45,22 @@ CREATE TABLE `imageline` (
   `Place` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `Date` date NOT NULL,
   `Description` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `img` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `img1` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `img2` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `img3` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `img4` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `img5` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `imageline`
+--
+
+INSERT INTO `imageline` (`id`, `Place`, `Date`, `Description`, `img`, `img1`, `img2`, `img3`, `img4`, `img5`) VALUES
+(1, 'viet nam', '2018-05-16', 'dadgasdgasdgasgdasdg', 'img/hinh1.jpg', 'img/small_picture01.jpg', 'img/small_picture02.jpg', 'img/small_picture03.jpg', 'img/small_picture04.jpg', 'img/small_picture05.jpg'),
+(2, 'sai gon ', '2018-05-23', 'fffffffffffffffffffffffffffffffffffffffffffdasf', 'img/hinh1.jpg', '', '', '', '', ''),
+(3, 'Singapore', '2016-11-04', 'Road To Singapore', 'img/hinh1.jpg', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -91,16 +105,19 @@ ALTER TABLE `user`
 --
 ALTER TABLE `admin`
   MODIFY `idad` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT cho bảng `imageline`
 --
 ALTER TABLE `imageline`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `idus` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+  MODIFY `idus` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

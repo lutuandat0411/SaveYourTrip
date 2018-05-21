@@ -1,7 +1,3 @@
-<?php
-  include 'header.php'
-?>
-
 
 <!DOCTYPE html>
 <html >
@@ -29,7 +25,6 @@
     </div>
     <div class="social-contact">
         <?php
-
             if( (!( isset( $_SESSION['login_status']))) || ($_SESSION['login_status'] != "ready")) {
                  echo '<a href="signup.php"><i class="fa fa-user-plus"></i>Ðăng kí</a>';
                  echo '<a href="signin.php"><i class="fa fa-sign-in"></i>Ðăng nhập</a>';
@@ -38,11 +33,10 @@
                  echo ' ';
                  echo '<a href="logout.php"><i class="fa fa-sign-in"></i>Ðăng xuất</a>';
             }                         
-          ?>     
+          ?>
        </div>
   </div>
 </nav>
-      <hr>
   <div class="timeline">
     <div class='year'>
       <div class='inner'>

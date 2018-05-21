@@ -1,9 +1,3 @@
-<?php
-  include 'header.php'
-?>
-<?php 
-     session_start();
- ?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -22,14 +16,13 @@
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
-        <section id="social" class="social">
-            <div class="container">
-                <!-- Example row of columns -->
-                <div class="row">
-                    <div class="social-wrapper">
-                         <div class="col-md-6">
-                            <div class="social-contact">
-                                <?php
+            <nav class="navbar navbar-default">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#home">My Timeline</a></li>
+                        </ul>
+                       <?php
 
                                         if( (!( isset( $_SESSION['login_status']))) || ($_SESSION['login_status'] != "ready")) {
                                             echo '<a href="signup.php"><i class="fa fa-user-plus"></i>Đăng kí</a>';
@@ -41,18 +34,6 @@
                                         }
                                        
                                     ?>     
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div> <!-- /container -->
-            </section>
-            <nav class="navbar navbar-default">
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="#home">My Timeline</a></li>
-                        </ul>
                  </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
             </nav>

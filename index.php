@@ -39,71 +39,60 @@
 </nav>
       <hr>
   <div class="timeline">
-  <div class="year">
-    <div class="inner">
-      <span>2016</span>
-    </div>
+    <div class='year'>
+      <div class='inner'>
+        <span> TimeLine </span>
+      </div>
+     </div>
+      <ul class='days' >
+   <?php
+        require 'sqldb.php';
+        // echo "Connected successfully";
+        $sql = " SELECT * FROM imageline ";
+        mysqli_set_charset($conn, "utf8");
+        $result = mysqli_query($conn, $sql);
+        if (!$result) {
+        die("Can't query data. Error occure.".mysqli_error($conn));
+        }
+        if (mysqli_num_rows($result) > 0) {
+        
+                while($row = mysqli_fetch_assoc($result)) {
+                  echo " <li class='day'>
+                          <div class='events'>
+                            <p>".$row["Description"]."</p>
+                            <div class='date'>".$row["Date"]."</div>
+                          </div>
+                         </li>
+                         <li class='day'>
+                          <div class='events'>
+                            <p></p>
+                          </div>
+                         </li>
+                         <li class='day'>
+                           <div class='events'>
+                            <div class='day__img'>
+                              <div class='col-md-12'>
+                                  <img class='img-responsive' src='".$row["img"]."' alt=''>
+                                <div class='col-md-3'>
+                                  <a > <img class='thumbnail img-responsive' src='".$row["img1"]."' alt=''> </a>
+                                  <img class='thumbnail img-responsive' src='".$row["img2"]."' alt=''>
+                                  <img class='thumbnail img-responsive' src='".$row["img3"]."' alt=''>
+                                  <img class='thumbnail img-responsive' src='".$row["img4"]."' alt=''>
+                                  <img class='thumbnail img-responsive' src='".$row["img5"]."' alt=''>
+                                </div>
+                              <p class='caption'>".$row["Place"]."</p>
+                            </div>
+                            <div class='date'>".$row["Date"]."</div>
+                            </div>
+                         </li>
+                        ";
+                  }         
+          } else {
+              echo "0 results";
+          }
+               mysqli_close($conn);
+    ?>
+    </ul>
   </div>
-  
-  <ul class="days">
-    <li class="day">
-      <div class="events">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius perferendis vitae, facere accusantium magni, explicabo mollitia quidem odio autem, iste optio? Consequuntur ratione dolorum velit maiores quam odit odio suscipit.</p>
-        <div class="date">18 October (Monday)</div>
-      </div>
-    </li>
-    
-    <li class="day">
-      <div class="events">
-        <p>Lorem dolor sit amet, consectetur adipisicing elit. Eius perferendis vitae, facere accusantium magni, explicabo mollitia quidem odio autem, iste optio? Consequuntur ratione dolorum velit maiores quam odit odio suscipit.</p>
-        <div class="date">18 October (Monday)</div>
-      </div>
-    </li>
-    
-    <li class="day">
-      <div class="events">
-        <div class="day__img">
-          <img src="http://placehold.it/400x300" alt="" />
-          <p class="caption">
-            Lorem ipsum dolor sit amet.
-          </p>
-        </div>
-        <div class="date">18 October (Monday)</div>
-      </div>
-    </li>
-    
-    <li class="day">
-      <div class="events">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius perferendis vitae, facere accusantium magni, explicabo mollitia quidem odio autem, iste optio? Consequuntur ratione dolorum velit maiores quam odit odio suscipit.</p>
-        <div class="date">18 October (Monday)</div>
-      </div>
-    </li>
-    
-    <li class="day">
-      <div class="events">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius perferendis vitae, facere accusantium magni, explicabo mollitia quidem odio autem, iste optio? Consequuntur ratione dolorum velit maiores quam odit odio suscipit.</p>
-        <div class="date">18 October (Monday)</div>
-      </div>
-    </li>
-    
-    <li class="day">
-      <div class="events">
-        <div class="day__img">
-          <img src="http://placehold.it/400x300" alt="" />
-          <p class="caption">
-            Lorem ipsum dolor sit amet.
-          </p>
-        </div>
-        <div class="date">18 October (Monday)</div>
-      </div>
-    </li>
-  </ul>
-  
-  <div class="year year--end">
-    <div class="inner">
-      <span>2017</span>
-    </div>
-  </div>
-</div>
 </body>
 </html>

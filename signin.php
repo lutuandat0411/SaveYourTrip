@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+ ?>
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -35,7 +38,7 @@
                                             echo '<a href="signup.php"><i class="fa fa-user-plus"></i>Đăng kí</a>';
                                             echo '<a href="signin.php"><i class="fa fa-sign-in"></i>Đăng nhập</a>';
                                         }else{
-                                             echo '<i style="color: #fff; font-size: 15px;">Hi,'.$_SESSION["name"].'</i>';
+                                             echo '<i style="color: #000000; font-size: 15px;">Hi,'.$_SESSION["name"].'</i>';
                                              echo ' ';
                                              echo '<a href="logout.php"><i class="fa fa-sign-in"></i>Đăng xuất</a>';
                                         }

@@ -9,8 +9,12 @@
   <title>Save Your Trip</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+=======
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+>>>>>>> ec7d11805642ee3ff4e0366b3f46d894cc49418b
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <script src='https://cdn.rawgit.com/jackmoore/zoom/master/jquery.zoom.min.js'></script>

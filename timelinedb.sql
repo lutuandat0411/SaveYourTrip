@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 21, 2018 lúc 10:36 AM
--- Phiên bản máy phục vụ: 10.1.32-MariaDB
--- Phiên bản PHP: 7.2.5
+-- Thời gian đã tạo: Th5 24, 2018 lúc 05:19 PM
+-- Phiên bản máy phục vụ: 10.1.29-MariaDB
+-- Phiên bản PHP: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,9 +58,9 @@ CREATE TABLE `imageline` (
 --
 
 INSERT INTO `imageline` (`id`, `Place`, `Date`, `Description`, `img`, `img1`, `img2`, `img3`, `img4`, `img5`) VALUES
-(1, 'viet nam', '2018-05-16', 'dadgasdgasdgasgdasdg', 'img/hinh1.jpg', 'img/small_picture01.jpg', 'img/small_picture02.jpg', 'img/small_picture03.jpg', 'img/small_picture04.jpg', 'img/small_picture05.jpg'),
-(2, 'sai gon ', '2018-05-23', 'fffffffffffffffffffffffffffffffffffffffffffdasf', 'img/hinh1.jpg', '', '', '', '', ''),
-(3, 'Singapore', '2016-11-04', 'Road To Singapore', 'img/hinh1.jpg', '', '', '', '', '');
+(1, 'Việt Nam', '2018-05-16', 'Nước Việt Nam thân yêu', 'img/hinh1.jpg', 'img/small_picture01.jpg', 'img/small_picture02.jpg', 'img/small_picture03.jpg', 'img/small_picture04.jpg', 'img/small_picture05.jpg'),
+(2, 'Hành trình 12 ngày SG-CM', '2018-05-23', 'Hành trình xuyên suốt 12 ngày đêm từ Sài Gòn về Cà Mau, đi một mình trên những cung đường, bên cạnh chỉ có xe và máy ảnh cùng với một ít tiền.', 'img/12ngay.jpg', 'img/12ngay1.jpg', 'img/12ngay2.jpg', 'img/12ngay3.jpg', 'img/12ngay4.jpg', 'img/12ngay5.jpg'),
+(3, 'Singapore', '2016-11-04', 'Road To Singapore', 'img/singtrip.jpg', 'img/singtrip1.jpg', 'img/singtrip2.jpg', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -71,8 +71,17 @@ INSERT INTO `imageline` (`id`, `Place`, `Date`, `Description`, `img`, `img1`, `i
 CREATE TABLE `user` (
   `idus` int(11) NOT NULL,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(16) COLLATE utf8_unicode_ci NOT NULL
+  `password` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
+  `fullname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`idus`, `username`, `password`, `fullname`, `email`) VALUES
+(1, 'dat', 'dat', 'LÆ° Tuáº¥n Äáº¡t', 'ludat17411');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -116,7 +125,7 @@ ALTER TABLE `imageline`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `idus` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

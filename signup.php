@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 		<link rel="stylesheet" href="css/menu.css">
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -22,13 +23,16 @@
             <nav class="navbar navbar-default">
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="#home">My Timeline</a></li>
+                        <ul class="nav navbar-nav navbar-left">
+                            <li class="active"><a href="index.php">My Timeline</a></li>
                         </ul>
+                        <ul class="nav navbar-nav navbar-right">
                        <?php
 
                                         if( (!( isset( $_SESSION['login_status']))) || ($_SESSION['login_status'] != "ready")) {
+                                        	echo '<br>';
                                             echo '<a href="signup.php"><i class="fa fa-user-plus"></i>Đăng kí</a>';
+                                            echo ' ';
                                             echo '<a href="signin.php"><i class="fa fa-sign-in"></i>Đăng nhập</a>';
                                         }else{
                                              echo '<i style="color: #fff; font-size: 15px;">Hi,'.$_SESSION["name"].'</i>';
@@ -36,7 +40,8 @@
                                              echo '<a href="logout.php"><i class="fa fa-sign-in"></i>Đăng xuất</a>';
                                         }
                                        
-                                    ?>     
+                                    ?>
+                                        </ul> 
                  </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
             </nav>
@@ -44,7 +49,7 @@
  <div class="container">
 	<div class="signup-container">
 		<h3 style="text-align: center;padding-bottom: 10px;">Đăng ký tài khoản</h3>
-			<form class="form" id="signup" data-toggle="validator" action="signup.php" method="post">
+			<form class="form" id="signup " style= "padding-left: 300px; padding-right: 300px;"  data-toggle="validator" action="signup.php" method="post">
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">
@@ -79,7 +84,9 @@
 						<input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required >
 					</div>
 				</div>
+				<div class="w3-center">
 				<input class="btn btn-large btn-success" type="submit" value="Đăng ký" name="register"/>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -93,6 +100,7 @@
 		echo '<script language="javascript">';
 	      echo 'alert("Đăng ký thành công")';
 	      echo '</script>';
+	    header("Location: signin.php");
 	    }
 	}
 ?>

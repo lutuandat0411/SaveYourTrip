@@ -10,6 +10,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <script src='https://cdn.rawgit.com/jackmoore/zoom/master/jquery.zoom.min.js'></script>
@@ -40,18 +41,23 @@
     <div class="navbar-header">
       <li class="active"><a class="navbar-brand" href="index.php">My Timeline</a></li>
     </div>
-    <div class="social-contact">
+
+    <div class="w3-display-container">
+    <div  class="w3-display-topright">
         <?php
             if( (!( isset( $_SESSION['login_status']))) || ($_SESSION['login_status'] != "ready")) {
-                 echo '<a href="signup.php"><i class="fa fa-user-plus"></i>Ðăng kí</a>';
-                 echo '<a href="signin.php"><i class="fa fa-sign-in"></i>Ðăng nhập</a>';
+                 echo '<a href="signup.php" style="color:#800080;"><i class="fa fa-user-plus"></i>Ðăng Kí</a>';
+                 echo " ";
+                 echo '<a href="signin.php" style="color:#800080;"><i class="fa fa-sign-in"></i>Ðăng Nhập</a>';
             }else{
-                 echo '<i style="color: #000000; font-size: 15px;">Hi,'.$_SESSION["name"].'</i>';
-                 echo ' ';
-                 echo '<a position="top"; href="logout.php"><i class="fa fa-sign-in"></i>Ðăng xuất</a>';
+                 echo '<i style="color: #FF0000;  font-size: 15px;">Hi,'.$_SESSION["name"].'</i>';
+                 echo " ";
+                 echo '<a href="logout.php" style="color:#800080;"><i class="fa fa-sign-in"></i>Ðăng xuất</a>';
             }                         
           ?>
        </div>
+     </div>
+
   </div>
 </nav>
   <div class="timeline">

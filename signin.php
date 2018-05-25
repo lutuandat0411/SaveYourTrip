@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 		<link rel="stylesheet" href="css/menu.css">
         <!--For Plugins external css-->
@@ -24,26 +25,36 @@
         <!--Theme Responsive css-->
         <!-- <link rel="stylesheet" href="assets/css/responsive.css" /> -->
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+       
     </head>
     <body>
             <nav class="navbar navbar-default">
                 <div class="container">
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="index.php">My Timeline</a></li>
+                        <ul class="nav navbar-nav navbar-left">
+                            <li class="active"><a  href="index.php">My Timeline</a></li>
                         </ul>
+
+
+                       
+   					 <div  class="w3-display-topright">
                          <?php
 
                                         if( (!( isset( $_SESSION['login_status']))) || ($_SESSION['login_status'] != "ready")) {
-                                            echo '<a href="signup.php"><i class="fa fa-user-plus"></i>Đăng kí</a>';
-                                            echo '<a href="signin.php"><i class="fa fa-sign-in"></i>Đăng nhập</a>';
+                                        	echo "<br> ";
+                                            echo '<a style="color:#800080;" href="signup.php"><i class="fa fa-user-plus"></i>Đăng Kí</a>';
+                                            echo " ";
+                                            echo '<a style="color:#800080;" href="signin.php"><i class="fa fa-sign-in"></i>Đăng nhập</a>';
                                         }else{
                                              echo '<i style="color: #000000; font-size: 15px;">Hi,'.$_SESSION["name"].'</i>';
                                              echo ' ';
                                              echo '<a href="logout.php"><i class="fa fa-sign-in"></i>Đăng xuất</a>';
                                         }
                                        
-                                    ?>     
+                                    ?>  
+                                    </div>
+                                  
                  </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
             </nav>
@@ -119,14 +130,17 @@
 		<h3 style="text-align: center;padding-bottom: 10px;">Đăng Nhập</h3>
 			<form class="form" id="signup" data-toggle="validator" action="signin.php" method="post">
 				<div class="form-group">
-					<div class="input-group">
+					<div class="input-group" style="padding-left: 300px; padding-right: 300px;">
 						<span class="input-group-addon">
 							<span class="glyphicon glyphicon-user"></span>
 						</span>
-						<input type="text" class="form-control"  placeholder="username" name="nA" required>	
+						
+						<input  type="text" class="form-control"  placeholder="username" name="nA" required>	
+						
 					</div>
 				</div>
-				<div class="form-group">
+
+				<div class="form-group" style="padding-left: 300px; padding-right: 300px;">
 					<div class="input-group">
 						<span class="input-group-addon">
 							<span class="glyphicon glyphicon-lock"></span>
@@ -134,8 +148,11 @@
 						<input type="password" class="form-control" placeholder="password" name="nB" required>
 					</div>
 				</div>
-				<button type="submit" value="login" name="login">Đăng nhập</button>
+				<div class="w3-center">
+				<button class="w3-button w3-ripple w3-purple" type="submit" value="login" name="login">Đăng nhập</button>
+			
 	      		<p class="message">Not registered? <a href="signup.php">Create an account</a></p>
+	      		</div>
 			</form>
 		</div>
 	</div> 

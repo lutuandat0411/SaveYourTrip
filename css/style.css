@@ -126,3 +126,6 @@ img {
   right: auto;
   left: 0;
 }
+.form-control{
+  width: 50%;
+}
